@@ -1,4 +1,4 @@
-﻿# Linux Fleet Mobility Controller & Multi-Process IPC System
+# Linux Fleet Mobility Controller & Multi-Process IPC System
 
 [![C](https://img.shields.io/badge/Language-C99-00599C?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![POSIX](https://img.shields.io/badge/Standard-POSIX%20%2F%20Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.kernel.org/)
@@ -11,31 +11,31 @@ The project models an on-demand urban transport service (similar to a ride-haili
 
 ---
 
-## 🏛️ System Architecture & IPC Primitives
+## ??? System Architecture & IPC Primitives
 
 ```
-   ┌────────────────────────────────┐
-   │            CLIENTS             │
-   │      (cliente 1, 2, ... N)     │
-   └───────────────▲────────────────┘
-                   │
-  Private FIFOs    │  Well-known Request FIFO
-  (/tmp/cli_*_fifo)│  (/tmp/taxi_fifo)
-                   │
-                   ▼
-       ┌────────────────────────┐
-       │       CONTROLADOR      │
-       │ (Central Fleet Manager)│
-       └───────────▲────────────┘
-                   │
-  Private FIFOs    │  Registration & Status FIFO
-  (/tmp/vei_*_fifo)│  (/tmp/taxi_fifo)
-                   │
-                   ▼
-   ┌────────────────────────────────┐
-   │            VEHICLES            │
-   │      (veiculo 1, 2, ... M)     │
-   └────────────────────────────────┘
+   +--------------------------------+
+   �            CLIENTS             �
+   �      (cliente 1, 2, ... N)     �
+   +---------------?----------------+
+                   �
+  Private FIFOs    �  Well-known Request FIFO
+  (/tmp/cli_*_fifo)�  (/tmp/taxi_fifo)
+                   �
+                   ?
+       +------------------------+
+       �       CONTROLADOR      �
+       � (Central Fleet Manager)�
+       +-----------?------------+
+                   �
+  Private FIFOs    �  Registration & Status FIFO
+  (/tmp/vei_*_fifo)�  (/tmp/taxi_fifo)
+                   �
+                   ?
+   +--------------------------------+
+   �            VEHICLES            �
+   �      (veiculo 1, 2, ... M)     �
+   +--------------------------------+
 ```
 
 ### Technical Highlights:
@@ -49,7 +49,7 @@ Detailed architecture and state diagrams are provided in the [`RelatorioTrabalho
 
 ---
 
-## 🚀 Building & Running
+## ?? Building & Running
 
 ### Requirements
 * Linux environment (Ubuntu, Debian, Fedora, Arch, or WSL2)
@@ -90,8 +90,8 @@ make
 
 ---
 
-## 👨‍💻 Author & Academic Context
+## ????? Author & Academic Context
 
-* **João Bernardo Graça**
+* **Jo�o Bernardo Gra�a**
 
 Developed as part of the **Degree in Computer Engineering (LEI)** - *Application Development (DA) branch* at **ISEC (Instituto Superior de Engenharia de Coimbra)**.
